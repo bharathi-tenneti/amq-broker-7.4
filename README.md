@@ -56,4 +56,27 @@ $ oc new-app --template=amq-broker-74-ssl \
 
 ```
 
+7 - Test by producing messages to a queue from the broker pod. Navigate to the terminal pod on broker pod.
 
+```
+$  ./broker/bin/artemis producer --destination helloworld --message-count 100 --user=admin --password=admin
+
+```
+![console](console.jpeg)
+ 
+8 - Navigate to AMQ Console to verify your messages, using Openshift routes.
+ 
+ ```
+ $ oc get routes
+ 
+ ```
+ Copy and paste the URL for console into browser, and navigate to queues to browse "helloworld" .
+ 
+![route](route.jpeg)
+ 
+9 - Use the service for accessing with in openshift cluster "broker-amq-tcp"
+ 
+ ```
+ $ oc get svc
+ ```
+ 
