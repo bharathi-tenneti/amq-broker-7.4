@@ -62,7 +62,7 @@ $ oc new-app --template=amq-broker-74-ssl \
 $  ./broker/bin/artemis producer --destination helloworld --message-count 100 --user=admin --password=admin
 
 ```
-![console](console.jpeg)
+![console](console.png)
  
 8 - Navigate to AMQ Console to verify your messages, using Openshift routes.
  
@@ -72,7 +72,7 @@ $  ./broker/bin/artemis producer --destination helloworld --message-count 100 --
  ```
  Copy and paste the URL for console into browser, and navigate to queues to browse "helloworld" .
  
-![route](route.jpeg)
+![route](route.png)
  
 9 - Use the service for accessing with in openshift cluster "broker-amq-tcp"
  
