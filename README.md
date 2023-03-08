@@ -43,12 +43,16 @@ $ oc create -f <path-to-templateyaml>
 
 ```
 
-$ oc new-app --name amq-broker-74-ssl --template=amq-broker-74-ssl \
--p AMQ_PROTOCOL="openwire,amqp,stomp,mqtt,hornetq" \ 
--p AMQ_QUEUES=testQueue -p AMQ_USER=admin \ 
--p AMQ_PASSWORD=admin -p AMQ_SECRET=amq-app-secret \  
--p AMQ_TRUSTSTORE=broker.ts -p AMQ_KEYSTORE=broker.ks \
--p AMQ_REQUIRE_LOGIN=true 
+$ oc new-app --template=amq-broker-74-ssl \ 
+ --param AMQ_KEYSTORE_PASSWORD=password \
+ --param AMQ_TRUSTSTORE_PASSWORD=password \
+ --param AMQ_USER=admin\
+ --param AMQ_PASSWORD=admin \
+ --param AMQ_SECRET=amq-app-secret \
+ --param AMQ_TRUSTSTORE=broker.ts \
+ --param AMQ_KEYSTORE=broker.ks \
+ --param AMQ_REQUIRE_LOGIN=true
+
 
 ```
 
